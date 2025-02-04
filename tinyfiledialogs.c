@@ -4435,13 +4435,13 @@ int tinyfd_messageBox(
 
                 if (strcmp("yesnocancel", aDialogType)) strcat(lDialogString, " --no-wrap");
 
-                strcat(lDialogString, " --text=\"") ;
+                strcat(lDialogString, " --no-markup --text=\"") ;
                 if (aMessage && strlen(aMessage)) strcat(lDialogString, aMessage) ;
                 strcat(lDialogString, "\"") ;
 
                 if ( (tfd_zenity3Present() >= 3) || (!tfd_zenityPresent() && (tfd_shellementaryPresent() || tfd_qarmaPresent()) ) )
                 {
-                        strcat( lDialogString , " --icon-name=dialog-" ) ;
+                        strcat( lDialogString , " --icon=dialog-" ) ;
                         if ( aIconType && (! strcmp( "question" , aIconType )
                           || ! strcmp( "error" , aIconType )
                           || ! strcmp( "warning" , aIconType ) ) )
